@@ -1,0 +1,43 @@
+html, body{
+    background-image: url("../images/astro-background.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.title-container{
+    background-color: limegreen;
+    color: darkgreen;
+    width: 40%;
+}
+.rules-container{
+    background-color: lightgreen;
+    color:green;
+    width: 40%;
+}
+.number-container{
+    background-color: dodgerblue;
+    color: darkblue;
+    width: 25%;
+    float: left;
+}
+.tally-container{ 
+    background-color: lightblue;
+    color: blue;
+    width: 25%;
+    float: center;
+}
+.img-box{
+    width: 100%;
+}
+
+.score-1-container{
+    background-color: aquamarine;
+    color: dodgerblue;
+    width: 10%;
+    float: left;
+}
+.score-2-container{
+   background-color: aquamarine;
+   color: dodgerblue;
+   width: 10%;
+   float: center;
+}
