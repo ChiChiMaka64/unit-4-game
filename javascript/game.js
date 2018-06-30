@@ -10,23 +10,24 @@ var numberStart = 19;
 var numberEnd = 120;
 var number = [];
 //while (numberStart <= numberEnd - 1) {
-   // number.push(numberStart++);
+// number.push(numberStart++);
 //}
 
 
 
-var RandomNumber = getRandomInt(numberStart, numberEnd);
-$("#Random-Number").text(RandomNumber)
-var crystal1Number = getRandomInt(1, 12);
-var crystal2Number = getRandomInt(1, 12);
-var crystal3Number = getRandomInt(1, 12);
-var crystal4Number = getRandomInt(1, 12);
+var RandomNumber
+var crystal1Number 
+var crystal2Number
+var crystal3Number
+var crystal4Number 
+
+StartNewGame()
 
 $("#crystal1").on("click", function () {
     console.log($(this));
     score = score + crystal1Number;
-   $("#Total-Score").text(score)
-   ProgressChecker()
+    $("#Total-Score").text(score)
+    ProgressChecker()
 });
 
 
@@ -40,8 +41,8 @@ $("#crystal2").on("click", function () {
 $("#crystal3").on("click", function () {
     console.log($(this));
     score = score + crystal3Number;
-    $("#Total-Score").text(score)
-    ProgressChecker()
+    $("#Total-Score").text(score);
+    ProgressChecker();
 });
 
 $("#crystal4").on("click", function () {
@@ -52,12 +53,30 @@ $("#crystal4").on("click", function () {
 });
 
 function ProgressChecker() {
-    if (RandomNumber===score) {
-        alert("You Won!")
+    if (RandomNumber === score) {
+        alert("You Won!");
+        wins++;
+        $("#Wins").text(wins);
+        StartNewGame();
     }
     if (score > RandomNumber) {
         alert("You Lose. Try Again.")
+        losses++;
+        $("#Losses").text(losses);
+        StartNewGame();
     }
+}
+
+function StartNewGame() {
+    RandomNumber = getRandomInt(numberStart, numberEnd);
+    $("#Random-Number").text(RandomNumber)
+    crystal1Number = getRandomInt(1, 12);
+    crystal2Number = getRandomInt(1, 12);
+    crystal3Number = getRandomInt(1, 12);
+    crystal4Number = getRandomInt(1, 12);
+    score=0;
+    $("#Total-Score").text(score)
+
 }
 
 
